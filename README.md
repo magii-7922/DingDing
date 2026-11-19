@@ -72,7 +72,7 @@ remembrance-cat/
 GitHub Pages cannot run the Python backend. Use **Render** connected to this GitHub repo:
 
 1. Open [https://dashboard.render.com](https://dashboard.render.com) and sign in with GitHub.
-2. **New → Blueprint** → select `magii-7922/remembrance-cat` (uses `render.yaml`).
+2. **New → Blueprint** → select `magii-7922/DingDing` (uses `render.yaml`).
 3. Set the secret env var **`ZAI_API_KEY`** when prompted.
 4. Deploy. When it finishes, open the `*.onrender.com` URL — that is the live site.
 
