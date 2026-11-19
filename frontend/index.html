@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remembrance Cat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <h1>Remembrance Cat</h1>
+            <p class="tagline">A 7-day desktop companion</p>
+          </div>
+        </div>
+        <div id="status-pill" class="status-pill muted">Checking API…</div>
+      </header>
+
+      <main class="layout">
+        <section id="create-panel" class="panel">
+          <h2>Create Companion</h2>
+          <form id="profile-form" class="form-grid">
+            <label>
+              Your Name
+              <input name="owner_name" value="Alex" required />
+            </label>
+            <label>
+              Cat's Name
+              <input name="name" value="Mochi" required />
+            </label>
+            <label>
+              Personality
+              <select name="temperament">
+                <option>Playful</option>
+                <option>Bitey</option>
+                <option>Lazy</option>
+                <option>Affectionate</option>
+              </select>
+            </label>
+            <label>
+              Meow
+              <select name="volume">
+                <option>Loud</option>
+                <option selected>Quiet</option>
+              </select>
+            </label>
+            <label>
+              Build
+              <select name="chonk">
+                <option>Slender</option>
+                <option selected>Standard</option>
+                <option>Absolute Chonk</option>
+              </select>
+            </label>
+            <label>
+              Fav Treat
+              <input name="fav_treat" value="salmon treats" />
+            </label>
+            <label class="full">
+              Cat Photo (optional)
+              <input name="photo" type="file" accept="image/*" />
+            </label>
+            <button type="submit" class="btn primary full">Create Companion</button>
+          </form>
+          <p id="create-msg" class="msg" hidden></p>
+        </section>
+
+        <section id="play-panel" class="panel play-panel" hidden>
+          <div class="play-header">
+            <div>
+              <h2 id="cat-title">Desktop</h2>
+              <p id="cat-notes" class="subtle"></p>
+            </div>
+            <div class="day-controls">
+              <button type="button" id="btn-reset" class="btn ghost">Reset</button>
+              <button type="button" id="btn-jump7" class="btn ghost">Jump Day 7</button>
+            </div>
+          </div>
+
+          <div id="desktop" class="desktop" aria-live="polite">
+            <div id="day-badge" class="day-badge">Day 1 / 7</div>
+            <div id="zone-icons"></div>
+            <img id="cat-sprite" class="cat-sprite" alt="cat" hidden />
+            <div id="speech-bubble" class="speech-bubble" hidden></div>
+            <div id="quiet-card" class="quiet-card" hidden></div>
+            <div class="taskbar-bar">
+              Start | <span id="taskbar-label">Remembering…</span>
+            </div>
+          </div>
+
+          <form id="advance-form" class="advance-row">
+            <input
+              id="player-note"
+              name="player_note"
+              placeholder="Optional note to your cat (e.g. stop shouting)"
+              autocomplete="off"
+            />
+            <button type="submit" id="btn-advance" class="btn primary">Advance Day</button>
+          </form>
+          <p id="play-msg" class="msg" hidden></p>
+          <ol id="step-log" class="step-log"></ol>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
