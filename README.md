@@ -1,4 +1,4 @@
-# Remembrance Cat
+# DingDing AI
 
 Web prototype of a 7-day “desktop companion” cat — ported from the GroupHomework Jupyter notebook.
 
