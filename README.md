@@ -67,7 +67,16 @@ remembrance-cat/
     src/                # desktop UI + step animation
 ```
 
-## Notes
+## Deploy on Render (public website)
 
+GitHub Pages cannot run the Python backend. Use **Render** connected to this GitHub repo:
+
+1. Open [https://dashboard.render.com](https://dashboard.render.com) and sign in with GitHub.
+2. **New → Blueprint** → select `magii-7922/remembrance-cat` (uses `render.yaml`).
+3. Set the secret env var **`ZAI_API_KEY`** when prompted.
+4. Deploy. When it finishes, open the `*.onrender.com` URL — that is the live site.
+
+Notes:
+- Free tier may sleep after idle; the first request can take ~30–60s to wake.
 - Never commit `.env` or real API keys.
 - Without `ZAI_API_KEY`, profile creation still works (vision falls back to orange); **Advance Day** returns `503` until a key is set.

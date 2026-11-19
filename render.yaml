@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: remembrance-cat
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: ZAI_API_KEY
+        sync: false
+      - key: ZAI_MODEL
+        value: glm-4.5-flash
+      - key: ZAI_VISION_MODEL
+        value: glm-4.6v-flash
+      - key: ZAI_BASE_URL
+        value: https://api.z.ai/api/paas/v4/

@@ -1,0 +1,12 @@
+.git
+.venv
+backend/.venv
+backend/.env
+backend/data/*.json
+frontend/node_modules
+frontend/dist
+**/__pycache__
+**/*.pyc
+.DS_Store
+Thumbs.db
+README.md
